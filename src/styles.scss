@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root{
+  --bg-color: #F5F7F8;
+  --card-color: #FFFFFF;
+  --optinal-color-teal: #48998C;
+  --optinal-color-rosa: #E91E63;
+  --optinal-color-purple: #9C27B0;
+  --optinal-color-blue: #2196F3;
+  --optinal-color-green: #4CAF50;
+  --optinal-color-orange: #FF9800;
+}
+app-root.dark-mode{
+  --bg-color: #1A1C1E;
+  --card-color: #2D2F31;
+}
