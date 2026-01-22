@@ -1,7 +1,11 @@
 <router-outlet></router-outlet>
 <header>
   <div class="add-new-note">
-    <app-new-note></app-new-note>
+        <button class="new-note-btn">Nova Nota</button>
+        
+        <p-dialog [modal]="true" >
+          <app-new-note></app-new-note>
+        </p-dialog>
   </div>
 </header>
 <main>
