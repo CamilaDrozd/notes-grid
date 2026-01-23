@@ -9,6 +9,11 @@
   --optinal-color-green: #4CAF50;
   --optinal-color-orange: #FF9800;
 }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 app-root.dark-mode{
   --bg-color: #1A1C1E;
   --card-color: #2D2F31;
