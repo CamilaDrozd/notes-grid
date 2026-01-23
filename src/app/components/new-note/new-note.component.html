@@ -1,11 +1,15 @@
-<header>
-  <button>Cancelar</button>
-  <button>Salvar nota</button>
-</header>
-<main>
-  <h1>Novo titulo</h1>
-  <p>Digite seus pensamentos...</p>
-</main>
-<footer>
-  <p-button icon="pi pi-trash" [rounded]="true" [text]="true"/>
-</footer>
+<section class="card-note">
+  <header>
+    <button>Cancelar</button>
+    <button>Salvar nota</button>
+  </header>
+  <main>
+    <h1><textarea name="note-title" id="note-title" placeholder="Novo titulo"></textarea></h1>
+    <p>
+      <textarea name="note-text" id="note-text" placeholder="Digite seus pensamentos..."></textarea>
+    </p>
+  </main>
+  <footer>
+    <p-button icon="pi pi-trash" [rounded]="true" [text]="true"/>
+  </footer>
+</section>

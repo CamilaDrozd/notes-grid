@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monrope:wght@400;500;600;700&amp;display=swap');
 :root{
   --bg-color: #F5F7F8;
   --card-color: #FFFFFF;
@@ -13,6 +14,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body{
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-color);
 }
 app-root.dark-mode{
   --bg-color: #1A1C1E;
