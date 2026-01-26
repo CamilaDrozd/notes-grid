@@ -1,13 +1,19 @@
-<section class="card-note">
+<section class="new-card-note">
   <header>
     <button>Cancelar</button>
-    <button>Salvar nota</button>
+    <button (click)="salvarNota()">Salvar nota</button>
   </header>
   <main>
-    <h1><textarea name="note-title" id="note-title" placeholder="Novo titulo"></textarea></h1>
-    <p>
-      <textarea name="note-text" id="note-text" placeholder="Digite seus pensamentos..."></textarea>
-    </p>
+    
+      <input type="text" name="note-title" id="note-title" placeholder="Novo titulo"
+      [(ngModel)]="novaNota.titulo">
+    
+    
+      <textarea name="note-text" id="note-text" placeholder="Digite seus pensamentos..."
+      [(ngModel)]="novaNota.conteudo">
+
+      </textarea>
+    
   </main>
   <footer>
     <p-button icon="pi pi-trash" [rounded]="true" [text]="true"/>
