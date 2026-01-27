@@ -19,6 +19,9 @@
     height: 54px;
     font-size: 34px;
     font-weight: bold;
+    margin-bottom: 16px;
+    color: var(--card-title-color);
+    outline: none;
 
   }
   textarea {
@@ -29,5 +32,7 @@
     height: 380px;
     font-size: 18px;
     line-height: 1.6;
+    color: var(--card-text-color);
+    outline: none;
   }
 }
