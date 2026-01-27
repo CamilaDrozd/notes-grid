@@ -2,24 +2,26 @@ import { Injectable } from '@angular/core';
 import { Nota } from '../models/nota.models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NotaService {
-
-  constructor() { }
+  constructor() {}
 
   private readonly STORAGE_KEY = 'notes_app';
 
-  saveNote(novaNota: Nota) :void {
-    let salvarNota: string = JSON.stringify(novaNota)
+  saveNote(novaNota: Nota): void {
+    novaNota.id = crypto.getRandomValues(new Uint32Array(1))[0];
+    novaNota.dataCriacao = new Date;
+
+    const notesList = this.getAllNotes();
+    notesList.push(novaNota);
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notesList));
   }
 
-  getAllNotes() :any{
-    let local_Storage_Notes = localStorage.getItem('notes_app');
-    if(local_Storage_Notes == null){
-      return null;
-    }else{
-      let allNotes = JSON.parse(local_Storage_Notes);
-    }
+  getAllNotes(): Nota[] {
+    const notes = localStorage.getItem(this.STORAGE_KEY);
+
+    return notes ? JSON.parse(notes) : [];
+    
   }
 }
