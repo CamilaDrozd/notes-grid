@@ -1,21 +1,28 @@
 <section class="new-card-note">
   <header>
     <button>Cancelar</button>
-    <button (click)="salvarNota()">Salvar nota</button>
+    <button (click)="salvarNota()" [disabled]="form.invalid">Salvar nota</button>
   </header>
   <main>
-    
-      <input type="text" name="note-title" id="note-title" placeholder="Novo titulo"
-      [(ngModel)]="novaNota.titulo">
-    
-    
-      <textarea name="note-text" id="note-text" placeholder="Digite seus pensamentos..."
-      [(ngModel)]="novaNota.conteudo">
+    <form [formGroup]="form">
+      <input
+        type="text"
+        name="note-title"
+        id="note-title"
+        placeholder="Novo titulo"
+        formControlName="titulo"
+      />
 
+      <textarea
+        name="note-text"
+        id="note-text"
+        placeholder="Digite seus pensamentos..."
+        formControlName="conteudo"
+      >
       </textarea>
-    
+    </form>
   </main>
   <footer>
-    <p-button icon="pi pi-trash" [rounded]="true" [text]="true"/>
+    <p-button icon="pi pi-trash" [rounded]="true" [text]="true" />
   </footer>
 </section>

@@ -9,13 +9,18 @@ export class NotaService {
 
   private readonly STORAGE_KEY = 'notes_app';
 
-  saveNote(novaNota: Nota): void {
-    novaNota.id = crypto.getRandomValues(new Uint32Array(1))[0];
-    novaNota.dataCriacao = new Date;
+  saveNote(titulo: string, conteudo: string): void {
+    const novaNota: Nota = {
+      id: crypto.getRandomValues(new Uint32Array(1))[0],
+      title: titulo,
+      conteudo: conteudo,
+      dataCriacao: new Date()
+    }
 
     const notesList = this.getAllNotes();
     notesList.push(novaNota);
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notesList));
+    console.log("Deu certo o salvamento" , novaNota);
   }
 
   getAllNotes(): Nota[] {
