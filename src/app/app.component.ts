@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NewNoteComponent } from './components/new-note/new-note.component';
 import { DialogModule } from 'primeng/dialog';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
+import { NoteListComponent } from './components/note-list/note-list.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { ButtonModule } from 'primeng/button';
     NewNoteComponent,
     DialogModule,
     CommonModule,
-    ButtonModule
+    ButtonModule,
+    NoteListComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

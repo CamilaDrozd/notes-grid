@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Nota } from '../../models/nota.models';
 import { ButtonModule } from 'primeng/button';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  Validators,
+  Validators
 } from '@angular/forms';
 import { NotaService } from '../../services/nota.service';
 
@@ -27,6 +27,8 @@ export class NewNoteComponent implements OnInit {
 
   constructor(private notaService: NotaService) {}
 
+  @Output() fechar = new EventEmitter<void>();
+
   ngOnInit(): void {
     console.log(this.notaService.getAllNotes());
   }
@@ -37,4 +39,9 @@ export class NewNoteComponent implements OnInit {
     const conteudo = this.form.controls.conteudo.value;
     this.notaService.saveNote(titulo, conteudo);
   }
+
+  cancelar(){
+    this.fechar.emit();
+  }
+  
 }
