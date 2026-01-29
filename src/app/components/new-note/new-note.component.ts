@@ -16,7 +16,7 @@ import { NotaService } from '../../services/nota.service';
   templateUrl: './new-note.component.html',
   styleUrl: './new-note.component.scss',
 })
-export class NewNoteComponent implements OnInit{
+export class NewNoteComponent implements OnInit {
   form = new FormGroup({
     titulo: new FormControl('', {
       validators: [Validators.minLength(2)],
@@ -32,8 +32,6 @@ export class NewNoteComponent implements OnInit{
   }
 
   salvarNota() {
-    //console.log('Titulo capturado:', this.novaNota.titulo);
-    //console.log('Texto capturado:', this.novaNota.conteudo);
     console.log(this.form);
     const titulo = this.form.controls.titulo.value;
     const conteudo = this.form.controls.conteudo.value;

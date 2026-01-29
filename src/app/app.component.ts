@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NewNoteComponent } from './components/new-note/new-note.component';
 import { DialogModule } from 'primeng/dialog';
 import { CommonModule } from '@angular/common';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { CommonModule } from '@angular/common';
     RouterOutlet,
     NewNoteComponent,
     DialogModule,
-    CommonModule
+    CommonModule,
+    ButtonModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
