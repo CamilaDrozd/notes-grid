@@ -1,6 +1,6 @@
 <section class="modal-container">
   <header class="modal-header">
-    <button class="cancelar-btn" (click)="cancelar()" >Cancelar</button>
+    <button class="cancelar-btn" (click)="cancelar()" >Sair</button>
     <button class="salvar-btn" (click)="salvarNota()" [disabled]="form.invalid" [style.--card-color]="" >Salvar Nota</button>
   </header>
   <main class="modal-content">
@@ -23,6 +23,6 @@
     </form>
   </main>
   <footer class="modal-footer">
-    <p-button icon="pi pi-trash" [rounded]="true" [text]="true" />
+    <p-button class="trash-btn" (onClick)="resetForm()" icon="pi pi-trash" [rounded]="true" [text]="true" />
   </footer>
 </section>

@@ -44,4 +44,7 @@ export class NewNoteComponent implements OnInit {
     this.fechar.emit();
   }
   
+  resetForm(){
+    this.form.reset();
+  }
 }
