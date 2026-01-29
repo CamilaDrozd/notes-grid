@@ -1,21 +1,21 @@
 <section class="modal-container">
   <header class="modal-header">
-    <button (click)="cancelar()">Cancelar</button>
-    <button (click)="salvarNota()" [disabled]="form.invalid">Salvar nota</button>
+    <button class="cancelar-btn" (click)="cancelar()" >Cancelar</button>
+    <button class="salvar-btn" (click)="salvarNota()" [disabled]="form.invalid" [style.--card-color]="" >Salvar Nota</button>
   </header>
   <main class="modal-content">
     <form [formGroup]="form">
       <input
         type="text"
         name="note-title"
-        id="note-title"
+        class="note-title"
         placeholder="Novo titulo"
         formControlName="titulo"
       />
 
       <textarea
         name="note-text"
-        id="note-text"
+        class="note-text"
         placeholder="Digite seus pensamentos..."
         formControlName="conteudo"
       >
