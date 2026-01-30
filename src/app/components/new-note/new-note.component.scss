@@ -70,10 +70,14 @@
   }
   .sair-btn {
     background: transparent;
-    color: var(--btn-light-grey);
+    color: var(--card-color);
     font-weight: 500;
+    background-color: var(--optional-color-teal);
+    border-radius: 8px;
     border: none;
+    width: 73px;
     cursor: pointer;
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.1);
     //margin-left: 5px;
 
   }
