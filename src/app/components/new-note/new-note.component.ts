@@ -38,9 +38,10 @@ export class NewNoteComponent implements OnInit {
     const titulo = this.form.controls.titulo.value;
     const conteudo = this.form.controls.conteudo.value;
     this.notaService.saveNote(titulo, conteudo);
+    this.sair();
   }
 
-  cancelar(){
+  sair(){
     this.fechar.emit();
   }
   
