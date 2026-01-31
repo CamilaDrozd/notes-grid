@@ -1,6 +1,9 @@
 <router-outlet></router-outlet>
 <header>
-  <div class="add-new-note">
+  <div class="div-logo-Mind-Sparrow">
+    <img class="logo-Mind-Sparrow" src="assets/img/Logo-Mind-Sparrow.png" >
+  </div>
+  <div class="div-add-new-note">
     <button class="new-note-btn" (click)="exibirNota = true">Nova Nota</button>
 
     <p-dialog
@@ -9,20 +12,20 @@
       [draggable]="false"
       [resizable]="false"
       [showHeader]="false"
-      [style]="{width: '750px', 'border-radius': '24px', 'overflow': 'hidden'}"
+      [style]="{ width: '750px', 'border-radius': '24px', overflow: 'hidden' }"
     >
       <app-new-note (fechar)="exibirNota = false"></app-new-note>
     </p-dialog>
   </div>
 </header>
 <main>
-  <section class="theme-section">
-    <div class="colors-btn">
+  <section class="main__theme-section">
+    <div class="main__theme__colors-btn">
       <p-button [rounded]="true" label="cor 1" />
       <p-button label="Save" icon="pi pi-check" iconPos="right" />
     </div>
   </section>
-  <section class="notes-list">
+  <section class="Main__notes-list">
     <app-note-list></app-note-list>
   </section>
 </main>

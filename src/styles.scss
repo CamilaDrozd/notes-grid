@@ -13,7 +13,7 @@
   --optional-color-orange: #FF9800;
   --card-title-color:#1A1C1E;
   --card-text-color: #4A4A4A;
-  --btn-light-grey: #757575;
+  --secondary-text-color: #757575;
 }
 *{
   margin: 0;
@@ -27,6 +27,9 @@ body{
 app-root.dark-mode{
   --bg-color: #1A1C1E;
   --card-color: #2D2F31;
+  --card-title-color: #FFFFFF;
+  --card-text-color: #E0E0E0;
+  --secondary-text-color: #B0B0B0;
 }
 .p-component-overlay{
   backdrop-filter: blur(7px);
