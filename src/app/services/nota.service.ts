@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Nota } from '../models/nota.models';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,10 @@ export class NotaService {
   constructor() {}
 
   private readonly STORAGE_KEY = 'notes_app';
+
+  private notasSubject = new BehaviorSubject<Nota[]>(this.getAllNotes());
+
+  notas$ = this.notasSubject.asObservable();
 
   saveNote(titulo: string, conteudo: string): void {
     const novaNota: Nota = {
@@ -20,6 +25,9 @@ export class NotaService {
     const notesList = this.getAllNotes();
     notesList.push(novaNota);
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notesList));
+
+    this.notasSubject.next(notesList);
+
     console.log("Deu certo o salvamento" , novaNota);
   }
 
