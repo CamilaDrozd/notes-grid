@@ -1,1 +1,6 @@
-<p>Aqui é onde ficará todas as notas que o usuário salvou, organizado em Grid</p>
+<section class="note-list__grid-card">
+  @for (nota of (notas$ | async); track nota.id) {
+    <h3>{{nota.title}}</h3>
+    <p>{{nota.conteudo}}</p>
+  }
+</section>
