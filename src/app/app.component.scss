@@ -1,21 +1,22 @@
-header{
+header {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   height: 70px;
-  border-bottom: 1.4px solid color-mix(in srgb, var(--secondary-text-color), transparent 70%);
-  
-  .div-logo-Mind-Sparrow{
+  border-bottom: 1.4px solid
+    color-mix(in srgb, var(--secondary-text-color), transparent 70%);
+
+  .div-logo-Mind-Sparrow {
     margin-left: 80px;
-    .logo-Mind-Sparrow{
+    .logo-Mind-Sparrow {
       height: 40px;
     }
   }
-  .div-add-new-note{
+  .div-add-new-note {
     margin-right: 80px;
   }
-  
+
   .new-note-btn {
     padding: 10px 20px;
     background-color: var(--optional-color-teal);
@@ -28,9 +29,8 @@ header{
     box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.1);
   }
 }
-main{
-
-  .main__theme-section{
+main {
+  .main__theme-section {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,11 +43,42 @@ main{
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     background-color: var(--card-color);
 
-    span{
+    span {
       text-transform: uppercase;
       font-weight: 500;
       color: var(--secondary-text-color);
     }
-    
+
+    .main__theme__colors-btn {
+      .main__theme__colors-btn__settings {
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        border: none;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        &.color-teal {
+          background-color: var(--optional-color-teal);
+        }
+        &.color-rosa {
+          background-color: var(--optional-color-rosa);
+        }
+        &.color-purple {
+          background-color: var(--optional-color-purple);
+        }
+        &.color-blue {
+          background-color: var(--optional-color-blue);
+        }
+        &.color-green {
+          background-color: var(--optional-color-green);
+        }
+        &.color-orange {
+          background-color: var(--optional-color-orange);
+        }
+      }
+    }
   }
 }
