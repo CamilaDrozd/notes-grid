@@ -1,8 +1,8 @@
 <section class="note-list__grid-card">
-  @for (nota of (notas$ | async); track nota.id) {
+  @for (nota of notas$ | async; track nota.id) {
     <div class="note-list__card-item">
-      <h3>{{nota.title}}</h3>
-      <p>{{nota.conteudo}}</p>
+      <h3>{{ nota.title !== "" ? nota.title : "Sem titulo" }}</h3>
+      <p>{{ nota.conteudo }}</p>
     </div>
   }
 </section>
