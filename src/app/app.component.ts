@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NewNoteComponent } from './components/new-note/new-note.component';
 import { DialogModule } from 'primeng/dialog';
@@ -21,7 +21,18 @@ import { TemaCor } from './models/tema-cor.models';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+
+  ngOnInit(): void {
+    const corSalva = localStorage.getItem('corEscolhida');
+
+    if(corSalva){
+      document.documentElement.style.setProperty('--primary-theme-color', corSalva);
+    }
+  }
+
+
   title = 'notes-grid';
   exibirNota: boolean = false;
 
