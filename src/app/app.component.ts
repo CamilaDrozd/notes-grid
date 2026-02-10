@@ -25,6 +25,10 @@ export class AppComponent implements OnInit{
 
 
   ngOnInit(): void {
+    this.aplicarTemaSalvo();
+  }
+
+  private aplicarTemaSalvo():void{
     const corSalva = localStorage.getItem('corEscolhida');
 
     if(corSalva){
@@ -32,11 +36,10 @@ export class AppComponent implements OnInit{
     }
   }
 
-
   title = 'notes-grid';
   exibirNota: boolean = false;
 
-  cores = [
+  readonly cores: TemaCor[] = [
     { nome: 'teal', classe: 'color-teal', variavel: 'var(--optional-color-teal)' },
     { nome: 'rosa', classe: 'color-rosa', variavel: 'var(--optional-color-rosa)' },
     { nome: 'purple', classe: 'color-purple',  variavel: 'var(--optional-color-purple)' },
