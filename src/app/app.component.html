@@ -1,7 +1,7 @@
 <router-outlet></router-outlet>
 <header>
   <div class="div-logo-Mind-Sparrow">
-    <img class="logo-Mind-Sparrow" src="assets/img/Logo-Mind-Sparrow.png" >
+    <img class="logo-Mind-Sparrow" src="assets/img/Logo-Mind-Sparrow.png" />
   </div>
   <div class="div-add-new-note">
     <button class="new-note-btn" (click)="exibirNota = true">Nova Nota</button>
@@ -21,16 +21,17 @@
 <main>
   <section class="main__theme-section">
     <div class="main__theme-title">
-      <i class="pi pi-palette" style="color:var(--optional-color-teal)"></i>
+      <i class="pi pi-palette" style="color: var(--primary-theme-color)"></i>
       <span>THEME SECTION</span>
     </div>
     <div class="main__theme__colors-btn">
-      <button type="button" class="main__theme__colors-btn__settings color-teal"></button>
-      <button type="button" class="main__theme__colors-btn__settings color-rosa"></button>
-      <button type="button" class="main__theme__colors-btn__settings color-purple"></button>
-      <button type="button" class="main__theme__colors-btn__settings color-green"></button>
-      <button type="button" class="main__theme__colors-btn__settings color-orange"></button>
-      
+      @for (cor of cores; track cor.nome) {
+        <button
+          type="button"
+          class="main__theme__colors-btn__settings"
+          [ngClass]="cor.classe"
+        ></button>
+      }
     </div>
   </section>
   <section class="Main__notes-list">

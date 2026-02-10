@@ -5,12 +5,16 @@
 :root{
   --bg-color: #F5F7F8;
   --card-color: #FFFFFF;
+
   --optional-color-teal: #48998C;
   --optional-color-rosa: #E91E63;
   --optional-color-purple: #9C27B0;
   --optional-color-blue: #2196F3;
   --optional-color-green: #4CAF50;
   --optional-color-orange: #FF9800;
+
+  --primary-theme-color: var(--optional-color-teal);
+
   --card-title-color:#1A1C1E;
   --card-text-color: #4A4A4A;
   --secondary-text-color: #757575;

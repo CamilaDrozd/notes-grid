@@ -19,7 +19,7 @@ header {
 
   .new-note-btn {
     padding: 10px 20px;
-    background-color: var(--optional-color-teal);
+    background-color: var(--primary-theme-color);
     color: var(--card-color);
     border-radius: 8px;
     font-weight: 600;
@@ -35,7 +35,7 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: 70%;
     height: 55px;
     margin: auto;
     padding: 0 24px;

@@ -33,7 +33,7 @@
     border-bottom: 1px solid color-mix(in srgb, var(--secondary-text-color), transparent 80%);
   }
   .modal-footer{
-    background-color: var(--optional-color-teal);
+    background-color: var(--primary-theme-color);
   }
 
   .modal-content {
@@ -72,7 +72,7 @@
     background: transparent;
     color: var(--card-color);
     font-weight: 500;
-    background-color: var(--optional-color-teal);
+    background-color: var(--primary-theme-color);
     border-radius: 8px;
     border: none;
     width: 73px;
@@ -83,7 +83,7 @@
   }
   .salvar-btn {
     //background-color: var(--cor-escolhida-pelo-usuario);
-    background-color: var(--optional-color-teal);
+    background-color: var(--primary-theme-color);
     color: var(--card-color);
     border-radius: 8px;
     font-weight: 600;

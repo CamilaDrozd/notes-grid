@@ -23,4 +23,13 @@ import { NoteListComponent } from './components/note-list/note-list.component';
 export class AppComponent {
   title = 'notes-grid';
   exibirNota: boolean = false;
+
+  cores = [
+    {nome: 'teal', classe: 'color-teal', variavel: 'var(--optinal-color-teal)' },
+    {nome: 'rosa', classe: 'color-rosa', variavel: 'var(--optinal-color-rosa)' },
+    {nome: 'purple', classe: 'color-purple', variavel: 'var(--optinal-color-purple)' },
+    {nome: 'blue', classe: 'color-blue', variavel: 'var(--optinal-color-blue)' },
+    {nome: 'green', classe: 'color-green', variavel: 'var(--optinal-color-green)' },
+    {nome: 'orange', classe: 'color-orange', variavel: 'var(--optinal-color-orange)' }
+  ];
 }
