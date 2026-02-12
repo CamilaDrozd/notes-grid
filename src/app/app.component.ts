@@ -24,7 +24,7 @@ import { Nota } from './models/nota.models';
 })
 export class AppComponent implements OnInit{
 
-  notaSelecionada: Nota = any;
+  notaSelecionada: Nota | null = null;
 
 
   ngOnInit(): void {
@@ -59,7 +59,7 @@ export class AppComponent implements OnInit{
     localStorage.setItem('corEscolhida', cor.variavel);
   }
 
-  editarNota(nota : any){
+  editarNota(nota : Nota){
     this.notaSelecionada = nota;
 
     this.exibirNota = true;

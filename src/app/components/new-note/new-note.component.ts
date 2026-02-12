@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Nota } from '../../models/nota.models';
 import { ButtonModule } from 'primeng/button';
 import {
@@ -29,12 +29,17 @@ export class NewNoteComponent implements OnInit {
 
   @Output() fechar = new EventEmitter<void>();
 
+  @Input() notaExistente: Nota | null = null;
+
   ngOnInit(): void {
     console.log(this.notaService.getAllNotes());
+    
   }
 
+  
+
   salvarNota() {
-    console.log(this.form);
+    console.log("Vai salvar essa nota -> " + this.form);
     const titulo = this.form.controls.titulo.value;
     const conteudo = this.form.controls.conteudo.value;
     this.notaService.saveNote(titulo, conteudo);
@@ -48,5 +53,17 @@ export class NewNoteComponent implements OnInit {
   
   resetForm(){
     this.form.reset();
+  }
+
+  editarNota(){
+    if(this.notaExistente){
+
+      this.form.patchValue({
+        titulo: this.notaExistente.title,
+        conteudo: this.notaExistente.conteudo
+      })
+      
+        console.log('Formulário Editado com a nota existente!');
+    }
   }
 }
