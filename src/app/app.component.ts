@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { NoteListComponent } from './components/note-list/note-list.component';
 import { TemaCor } from './models/tema-cor.models';
+import { Nota } from './models/nota.models';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +17,14 @@ import { TemaCor } from './models/tema-cor.models';
     DialogModule,
     CommonModule,
     ButtonModule,
-    NoteListComponent,
+    NoteListComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit{
+
+  notaSelecionada: Nota = any;
 
 
   ngOnInit(): void {
@@ -54,5 +57,11 @@ export class AppComponent implements OnInit{
       cor.variavel,
     );
     localStorage.setItem('corEscolhida', cor.variavel);
+  }
+
+  editarNota(nota : any){
+    this.notaSelecionada = nota;
+
+    this.exibirNota = true;
   }
 }

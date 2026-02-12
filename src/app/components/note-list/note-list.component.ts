@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NotaService } from '../../services/nota.service';
 import { AsyncPipe } from '@angular/common';
+import { Nota } from '../../models/nota.models';
 
 @Component({
   selector: 'app-note-list',
@@ -12,11 +13,17 @@ import { AsyncPipe } from '@angular/common';
 export class NoteListComponent implements OnInit {
   listaDeNotas: any[] = [];
 
+  @Output() cardSelecionada = new EventEmitter<Nota>();
+
   constructor (private notaService: NotaService) {}
 
   notas$ = this.notaService.notas$;
 
   ngOnInit(): void {
     this.listaDeNotas = this.notaService.getAllNotes();
+  }
+
+  selecionarNota(nota : Nota){
+    this.cardSelecionada.emit(nota);
   }
 }

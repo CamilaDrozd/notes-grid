@@ -14,7 +14,9 @@
       [showHeader]="false"
       [style]="{ width: '750px', 'border-radius': '24px', overflow: 'hidden' }"
     >
-      <app-new-note (fechar)="exibirNota = false"></app-new-note>
+      <app-new-note 
+      [notaExistente]= "notaSelecionada"
+      (fechar)="exibirNota = false"></app-new-note>
     </p-dialog>
   </div>
 </header>
@@ -36,6 +38,7 @@
     </div>
   </section>
   <section class="Main__notes-list">
-    <app-note-list></app-note-list>
+    <app-note-list (cardSelecionada)="editarNota($event)" 
+    ></app-note-list>
   </section>
 </main>
