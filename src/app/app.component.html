@@ -14,9 +14,12 @@
       [showHeader]="false"
       [style]="{ width: '750px', 'border-radius': '24px', overflow: 'hidden' }"
     >
+    @if (exibirNota) {
+
       <app-new-note 
       [notaEditar]= "notaSelecionada"
       (fechar)="exibirNota = false"></app-new-note>
+    }
 
     </p-dialog>
   </div>

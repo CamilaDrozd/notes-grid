@@ -3,6 +3,7 @@
     <div class="note-list__card-item" (click)="selecionarNota(nota)">
       <h3>{{ nota.title !== "" ? nota.title : "Sem titulo" }}</h3>
       <p>{{ nota.conteudo }}</p>
+      <p>{{nota.dataCriacao}}</p>
     </div>
   }
 </section>

@@ -32,21 +32,23 @@ export class NewNoteComponent implements OnInit {
   @Input() notaEditar: Nota | null = null;
 
   ngOnInit(): void {
-    console.log(this.notaService.getAllNotes());
-    
     if(this.notaEditar){
       this.editarNota();
+      console.log(this.notaEditar.id);
     }
   }
 
   
 
   salvarNota() {
-    console.log("Vai salvar essa nota -> " + this.form);
-    const novaNota: Nota = {
-      title: this.form.value.titulo,
-      conteudo: this.form.value.conteudo
+    let dadosForm = this.form.getRawValue();
+    
+    let novaNota: Nota = {
+      ...this.notaEditar,
+      title: dadosForm.titulo,
+      conteudo: dadosForm.conteudo
     }
+    
     this.notaService.saveNote(novaNota);
     this.sair();
     this.resetForm();
@@ -61,15 +63,12 @@ export class NewNoteComponent implements OnInit {
   }
 
   editarNota(){
-    console.log("Entrou no editarNota");
     if(this.notaEditar){
-
       this.form.patchValue({
         titulo: this.notaEditar.title,
         conteudo: this.notaEditar.conteudo
       })
       
-        console.log('/n Entrou no IF do editarNota' + this.form);
     }
   }
 }
