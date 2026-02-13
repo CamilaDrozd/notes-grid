@@ -59,7 +59,7 @@ export class AppComponent implements OnInit{
     localStorage.setItem('corEscolhida', cor.variavel);
   }
 
-  editarNota(nota : Nota){
+  receberNota(nota : Nota){
     this.notaSelecionada = nota;
 
     this.exibirNota = true;

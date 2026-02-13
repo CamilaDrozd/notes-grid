@@ -25,5 +25,6 @@ export class NoteListComponent implements OnInit {
 
   selecionarNota(nota : Nota){
     this.cardSelecionada.emit(nota);
+    console.log("Entrou no SelecionarNota do note-list" + nota)
   }
 }

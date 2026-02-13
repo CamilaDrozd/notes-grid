@@ -14,21 +14,25 @@ export class NotaService {
 
   notas$ = this.notasSubject.asObservable();
 
-  saveNote(titulo: string, conteudo: string): void {
+  saveNote(nota: Nota): void {
     const novaNota: Nota = {
-      id: crypto.getRandomValues(new Uint32Array(1))[0],
-      title: titulo,
-      conteudo: conteudo,
-      dataCriacao: new Date()
+      ...nota,
+    };
+    if(nota.id){
+      this.updateNote(novaNota);
+    }else{
+        novaNota.id = crypto.getRandomValues(new Uint32Array(1))[0];
+        novaNota.dataCriacao = new Date();
+
+        const notesList = this.getAllNotes();
+        notesList.push(novaNota);
+        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notesList));
+    
+        this.notasSubject.next(notesList);
+    
+        console.log("Deu certo o salvamento de uma nova Nota" , novaNota);
     }
 
-    const notesList = this.getAllNotes();
-    notesList.push(novaNota);
-    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notesList));
-
-    this.notasSubject.next(notesList);
-
-    console.log("Deu certo o salvamento" , novaNota);
   }
 
   getAllNotes(): Nota[] {
@@ -37,4 +41,23 @@ export class NotaService {
     return notes ? JSON.parse(notes) : [];
     
   }
+
+  updateNote(notaAtualizar : Nota){
+    notaAtualizar.dataAtualizacao = new Date();
+
+    const notesList = this.getAllNotes();
+
+    const index: number = notesList.findIndex(note => note.id == notaAtualizar.id);
+
+    if (index !== -1){
+
+      notesList[index] = notaAtualizar;
+      
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notesList));
+      this.notasSubject.next(notesList)
+      console.log("Salvamento da edição deu certo");
+    }
+    }
+
+
 }

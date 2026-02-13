@@ -29,20 +29,25 @@ export class NewNoteComponent implements OnInit {
 
   @Output() fechar = new EventEmitter<void>();
 
-  @Input() notaExistente: Nota | null = null;
+  @Input() notaEditar: Nota | null = null;
 
   ngOnInit(): void {
     console.log(this.notaService.getAllNotes());
     
+    if(this.notaEditar){
+      this.editarNota();
+    }
   }
 
   
 
   salvarNota() {
     console.log("Vai salvar essa nota -> " + this.form);
-    const titulo = this.form.controls.titulo.value;
-    const conteudo = this.form.controls.conteudo.value;
-    this.notaService.saveNote(titulo, conteudo);
+    const novaNota: Nota = {
+      title: this.form.value.titulo,
+      conteudo: this.form.value.conteudo
+    }
+    this.notaService.saveNote(novaNota);
     this.sair();
     this.resetForm();
   }
@@ -56,14 +61,15 @@ export class NewNoteComponent implements OnInit {
   }
 
   editarNota(){
-    if(this.notaExistente){
+    console.log("Entrou no editarNota");
+    if(this.notaEditar){
 
       this.form.patchValue({
-        titulo: this.notaExistente.title,
-        conteudo: this.notaExistente.conteudo
+        titulo: this.notaEditar.title,
+        conteudo: this.notaEditar.conteudo
       })
       
-        console.log('Formulário Editado com a nota existente!');
+        console.log('/n Entrou no IF do editarNota' + this.form);
     }
   }
 }

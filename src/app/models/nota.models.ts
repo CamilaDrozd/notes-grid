@@ -1,8 +1,8 @@
 export interface Nota {
-  id: number;
+  id?: number;
   title?: string;
   conteudo?: string;
-  dataCriacao: Date;
+  dataCriacao?: Date;
   dataAtualizacao?: Date;
   //categoria: enum de tipos: Work, Travel, Reading, Personal...
 }
