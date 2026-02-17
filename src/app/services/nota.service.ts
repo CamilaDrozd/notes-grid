@@ -14,25 +14,29 @@ export class NotaService {
 
   notas$ = this.notasSubject.asObservable();
 
-  saveNote(nota: Nota): void {n
+  saveNote(nota: Nota): void {
     let novaNota: Nota = {
       ...nota,
     };
+
     console.log(nota.id);
     if (novaNota.id) {
+
       this.updateNote(novaNota);
       console.log('AQUI só deve entrar se for UMA NOTA EDITADA');
+
     } else {
+
+      console.log('Aqui só deve entrar se for uma NOVA NOTA');
       novaNota.id = crypto.getRandomValues(new Uint32Array(1))[0];
       novaNota.dataCriacao = new Date();
-      console.log('Aqui só deve entrar se for uma NOVA NOTA');
+
+      const notesList = this.getAllNotes();
+      notesList.push(novaNota);
+  
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notesList));
+      this.notasSubject.next(notesList);
     }
-    const notesList = this.getAllNotes();
-    notesList.push(novaNota);
-    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notesList));
-
-    this.notasSubject.next(notesList);
-
   }
 
   getAllNotes(): Nota[] {
@@ -53,8 +57,8 @@ export class NotaService {
     if (index !== -1) {
       notesList[index] = notaAtualizar;
 
-      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notesList));
-      this.notasSubject.next(notesList);
+        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notesList));
+        this.notasSubject.next(notesList);
     }
   }
 }

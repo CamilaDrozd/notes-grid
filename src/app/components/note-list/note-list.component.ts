@@ -2,11 +2,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NotaService } from '../../services/nota.service';
 import { AsyncPipe } from '@angular/common';
 import { Nota } from '../../models/nota.models';
+import { Button } from "primeng/button";
 
 @Component({
   selector: 'app-note-list',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, Button],
   templateUrl: './note-list.component.html',
   styleUrl: './note-list.component.scss'
 })
