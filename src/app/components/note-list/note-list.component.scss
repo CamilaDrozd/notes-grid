@@ -14,9 +14,20 @@
     border-radius: 16px;
     //box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.03);
     background-color: var(---card-color);
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+
+    .nota-data{
+      color: var(--secondary-text-color);
+    }
+
+    .note-list__delete-button{
+      background-color: var(--optional-color-teal);
+    }
+
   }
 
-  .note-list__delete-button{
-    background-color: var(--optional-color-teal);
-  }
 }

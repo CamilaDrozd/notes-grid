@@ -3,11 +3,12 @@ import { NotaService } from '../../services/nota.service';
 import { AsyncPipe } from '@angular/common';
 import { Nota } from '../../models/nota.models';
 import { Button } from "primeng/button";
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-note-list',
   standalone: true,
-  imports: [AsyncPipe, Button],
+  imports: [AsyncPipe, Button, DatePipe],
   templateUrl: './note-list.component.html',
   styleUrl: './note-list.component.scss'
 })
