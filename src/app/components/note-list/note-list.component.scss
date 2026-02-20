@@ -1,23 +1,21 @@
 .note-list__grid-card {
   margin: 40px 95px;
   display: grid;
-  grid-template-columns:repeat(4, minmax(230px, 1fr));
+  grid-template-columns: repeat(4, minmax(230px, 1fr));
   align-items: start;
   gap: 40px 35px;
 
-  @media (max-width: 1200px){
+  @media (max-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 700px){
-    grid-template-columns: repeat(1,1fr);
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(1, 1fr);
   }
-
-  
 
   .note-list__card-item {
     min-height: 200px;
@@ -25,7 +23,6 @@
     border-radius: 16px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.03);
     background-color: var(--card-color);
-
 
     word-wrap: break-word;
     word-break: break-all;
@@ -35,16 +32,26 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
     cursor: pointer;
 
-    &:hover{
-    transform: translateY(-3px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-    background-color: color-mix(in srgb, var(--card-color), white 5%);
-  }
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+      background-color: color-mix(in srgb, var(--card-color), white 5%);
 
-    .note-list__nota-conteudo{
+      .note-list__delete-button {
+        opacity: 1;
+      }
+      ::ng-deep .pi-trash {
+        color: var(--primary-theme-color) !important;
+        transform: scale(1.2);
+      }
+    }
+
+    .note-list__nota-conteudo {
       display: -webkit-box;
       -webkit-line-clamp: 10;
       -webkit-box-orient: vertical;
@@ -52,22 +59,25 @@
       text-overflow: ellipsis;
     }
 
-    h3{
+    h3 {
       margin-top: 0;
       font-size: 1.2rem;
     }
 
-    .nota-data{
+    .nota-data {
       color: var(--secondary-text-color);
       font-size: 0.85rem;
       margin-bottom: 12px;
       display: block;
     }
 
-    .note-list__delete-button{
-      background-color: var(--optional-color-teal);
+    .note-list__delete-button {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      opacity: 0;
     }
-
   }
-
 }

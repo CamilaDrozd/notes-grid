@@ -29,4 +29,8 @@ export class NoteListComponent implements OnInit {
     this.cardSelecionada.emit(nota);
     console.log("Entrou no SelecionarNota do note-list" + nota)
   }
+
+  deletCard(nota : Nota):void{
+    
+  }
 }
