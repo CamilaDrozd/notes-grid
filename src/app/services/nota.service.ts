@@ -61,4 +61,13 @@ export class NotaService {
         this.notasSubject.next(notesList);
     }
   }
+
+  deleteCard(nota : Nota):void{
+    const list = this.getAllNotes();
+
+    const newList = list.filter(notas => notas.id !== nota.id);
+
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(newList));
+    this.notasSubject.next(newList);
+  }
 }

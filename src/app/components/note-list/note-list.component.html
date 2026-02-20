@@ -8,7 +8,7 @@
       </div>
 
       <div class="note-list__delete-button">
-        <p-button [text]="true" icon="pi pi-trash" />
+        <p-button [text]="true" icon="pi pi-trash" (onClick)="deletButtonClick(nota)"/>
       </div>
     </div>
   }
