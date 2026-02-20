@@ -55,6 +55,8 @@ export class NewNoteComponent implements OnInit {
   }
 
   sair(){
+    this.form.reset();
+    this.notaEditar = null;
     this.fechar.emit();
   }
   

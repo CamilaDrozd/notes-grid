@@ -62,13 +62,15 @@
     h3 {
       margin-top: 0;
       font-size: 1.2rem;
+      word-break: keep-all;
     }
 
     .nota-data {
       color: var(--secondary-text-color);
       font-size: 0.85rem;
-      margin-bottom: 12px;
+      margin-bottom: 5px;
       display: block;
+      margin-top: 20px;
     }
 
     .note-list__delete-button {
