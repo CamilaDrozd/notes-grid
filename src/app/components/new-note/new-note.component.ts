@@ -71,4 +71,14 @@ export class NewNoteComponent implements OnInit {
       
     }
   }
+
+  deletarNota():void{
+    const id = this.notaEditar?.id;
+    if (id == null) {
+      console.warn('Cannot delete: notaEditar.id is undefined');
+      return;
+    }
+    this.notaService.deleteCard(id);
+    this.sair();
+  }
 }

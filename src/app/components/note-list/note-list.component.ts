@@ -30,6 +30,11 @@ export class NoteListComponent implements OnInit {
   }
 
   deletButtonClick(nota : Nota):void{
-    this.notaService.deleteCard(nota);
+    const id = nota.id;
+    if (id == null) {
+      console.warn('Cannot delete: nota.id is undefined', nota);
+      return;
+    }
+    this.notaService.deleteCard(id);
   }
 }

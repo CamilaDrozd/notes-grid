@@ -62,10 +62,10 @@ export class NotaService {
     }
   }
 
-  deleteCard(nota : Nota):void{
+  deleteCard(id : number):void{
     const list = this.getAllNotes();
 
-    const newList = list.filter(notas => notas.id !== nota.id);
+    const newList = list.filter(notas => notas.id !== id);
 
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(newList));
     this.notasSubject.next(newList);
