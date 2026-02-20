@@ -4,7 +4,7 @@
 
       <div class="note-list__text-section" (click)="selecionarNota(nota)">
         <h3>{{ nota.title !== "" ? nota.title : "Sem titulo" }}</h3>
-        <p>{{ nota.conteudo }}</p>
+        <p class="note-list__nota-conteudo">{{ nota.conteudo }}</p>
         <p class="nota-data">{{ nota.dataCriacao | date: 'dd MMM'}}</p>
       </div>
 
