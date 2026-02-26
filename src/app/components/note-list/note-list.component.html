@@ -1,15 +1,28 @@
-<section class="note-list__grid-card">
-  @for (nota of notas$ | async; track nota.id) {
-    <div class="note-list__card-item">
-      <div class="note-list__text-section" (click)="selecionarNota(nota)">
-        <h3>{{ nota.title !== "" ? nota.title : "Sem titulo" }}</h3>
-        <p class="note-list__nota-conteudo">{{ nota.conteudo }}</p>
-        <p class="nota-data">{{ nota.dataCriacao | date: "dd MMM" }}</p>
-      </div>
+<div class="note-list__container">
+  @if (notas$ | async; as notas) {
+    @if (notas.length > 0){
+      <section class="note-list__grid-card">
+        @for (nota of notas$ | async; track nota.id) {
+          <div class="note-list__card-item">
+            <div class="note-list__text-section" (click)="selecionarNota(nota)">
+              <h3>{{ nota.title !== "" ? nota.title : "Sem titulo" }}</h3>
+              <p class="note-list__nota-conteudo">{{ nota.conteudo }}</p>
+              <p class="nota-data">{{ nota.dataCriacao | date: "dd MMM" }}</p>
+            </div>
+      
+            <div class="note-list__delete-button">
+              <p-button [text]="true" icon="pi pi-trash" (onClick)="deletButtonClick(nota)"/>
+            </div>
+          </div>
+        }
+      </section>
 
-      <div class="note-list__delete-button">
-        <p-button [text]="true" icon="pi pi-trash" (onClick)="deletButtonClick(nota)"/>
+    } @else {
+      <div class="note-list__empty">
+        <img src="assets\img\Nenhuma nota encontrada.svg" alt="Nenhuma nota adicionada">
+        <h2>Nenhuma nota adicionada</h2>
       </div>
-    </div>
+    }
   }
-</section>
+</div>
+
