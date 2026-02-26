@@ -12,12 +12,20 @@ header {
     .logo-Mind-Sparrow {
       height: 40px;
     }
+
+    @media (max-width: 600px){
+      margin: 10px;
+      margin-right: 40px;
+      height: 20px;
+    }
   }
   .div-add-new-note {
     margin-right: 80px;
   }
 
   .new-note-btn {
+    width: auto;
+    min-width: 120px;
     padding: 10px 20px;
     background-color: var(--primary-theme-color);
     color: var(--card-color);
@@ -27,6 +35,13 @@ header {
     cursor: pointer;
     transition: opacity 0.2s;
     box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 600px){
+      width: 100%;
+      font-size: 0.9rem;
+      margin: 20px;
+      margin-right: 15px;
+    }
   }
 }
 main {
@@ -43,6 +58,17 @@ main {
     border-radius: 16px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     background-color: var(--card-color);
+
+    @media (max-width: 600px){
+      
+      .main__theme-title{
+        padding: 10px;
+          font-size: 0.9rem;
+      }
+
+    
+
+    }
 
     .main__theme-title{
       span {

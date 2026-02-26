@@ -9,14 +9,18 @@
   
     @media (max-width: 1200px) {
       grid-template-columns: repeat(3, 1fr);
+      margin: 30px 40px;
     }
   
     @media (max-width: 900px) {
       grid-template-columns: repeat(2, 1fr);
+      margin: 20px;
     }
   
-    @media (max-width: 700px) {
+    @media (max-width: 600px) {
       grid-template-columns: repeat(1, 1fr);
+      margin: 15px;
+      gap: 20px;
     }
   
     .note-list__card-item {
@@ -38,6 +42,11 @@
         transform 0.2s ease,
         box-shadow 0.2s ease;
       cursor: pointer;
+
+      @media(max-width: 600px){
+        padding: 16px;
+        min-height: 180px;
+      }
   
       &:hover {
         transform: translateY(-3px);
@@ -91,17 +100,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
     img{
-      width: 250px;
+      width: 80%;
+      max-width: 250px;
+      height: auto;
+
       margin-top: 80px;
       margin-bottom: 50px;
     }
     h2{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-self: center;
-      
+      font-size: clamp(1.2rem, 5vw, 1.8rem);
       font-weight: 400;
       color: var(--card-title-color);
     }
