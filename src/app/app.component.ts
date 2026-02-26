@@ -31,6 +31,11 @@ export class AppComponent implements OnInit{
     this.aplicarTemaSalvo();
   }
 
+  abrirNovaNota(){
+    this.notaSelecionada = null;
+    this.exibirNota = true;
+  }
+
   private aplicarTemaSalvo():void{
     const corSalva = localStorage.getItem('corEscolhida');
 

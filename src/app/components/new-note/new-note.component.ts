@@ -70,7 +70,6 @@ export class NewNoteComponent implements OnInit {
         titulo: this.notaEditar.title,
         conteudo: this.notaEditar.conteudo
       })
-      
     }
   }
 
