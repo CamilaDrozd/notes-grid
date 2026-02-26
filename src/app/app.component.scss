@@ -60,13 +60,25 @@ main {
     background-color: var(--card-color);
 
     @media (max-width: 600px){
+
+      flex-direction: column;
+      height: auto;
+      padding: 15px;
+      width: 90%;
+      gap: 12px;
       
       .main__theme-title{
-        padding: 10px;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
       }
 
-    
+      .main__theme__colors-btn{
+        gap: 8px;
+
+        .main__theme__colors-btn__settings{
+          height: 32px;
+          width: 32px;
+        }
+      }
 
     }
 
